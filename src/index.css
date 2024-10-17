@@ -23,14 +23,26 @@
 }
 .imgContainer {
     display: flex;
-    flex-direction: column;
-}
-.bgImage {
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     width: 100%;
     height: 100vh;
-    flex: 1;
-    object-fit: cover;
 }
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px; /* Restrict maximum size for bigger screens */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+@media (max-width: 768px) {
+    .bgImage {
+        width: 100%; /* Automatically adjust for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
 .bgGradient {
     position: absolute;
     inset: 0;
@@ -56,7 +68,6 @@ footer {
 footer div {
     display: flex;
     flex-direction: column;
-    
 }
 
 footer h2 {
@@ -142,7 +153,7 @@ footer button :hover {
 }
 
 .sidebarContent h2 {
-    font-size: 1.4rem;   
+    font-size: 1.4rem;
 }
 .sidebarContent button {
     background: transparent;
@@ -156,16 +167,15 @@ footer button :hover {
 }
 
 .sidebar i {
-    font-size:1.3rem;
+    font-size: 1.3rem;
 }
 
 .sidebarContent button :hover {
     opacity: 0.7;
 }
 .descriptionDate {
-    font-size:0.9rem;
+    font-size: 0.9rem;
     font-weight: 200;
-    
 }
 
 .descriptionContainer {
